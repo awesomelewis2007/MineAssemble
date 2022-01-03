@@ -64,12 +64,3 @@ jobs:
           make -j 4
           make install
           export PATH=$HOME/i686-pc-elf/bin:$PATH
-
-
-
-
-
-
-
-
-
