@@ -32,19 +32,6 @@ jobs:
           sudo apt-get install flex bison
           sudo apt-get install libsdl-dev
           sudo apt-get install nasm
-      - name: Git clone
-        run: |
-          mkdir ~/src                 # Source code
-          mkdir ~/i686-pc-elf-build   # Temporary build files
-          mkdir ~/i686-pc-elf         # Toolchain install destination
-          git clone git://sourceware.org/git/binutils.git ~/src/binutils
-          git clone git://gcc.gnu.org/git/gcc.git ~/src/gcc
-          git clone git://git.qemu-project.org/qemu.git ~/src/qemu
-          git clone git://sourceware.org/git/gdb.git ~/src/gdb
-          cd ~/src/binutils ; git checkout binutils-2_23_1
-          cd ~/src/gcc ; git checkout gcc-4_8-branch
-          cd ~/src/qemu ; git checkout v1.5.0
-          cd ~/src/gdb ; git checkout gdb_7_6-branch
       - name: Make
         run: |
           mkdir ~/i686-pc-elf-build/binutils ; cd ~/i686-pc-elf-build/binutils
